@@ -19,3 +19,9 @@ class InMemoryCategoryRepository(CategoryRepository):
         category = self.get_by_id(id)
         if category:
             self.categories.remove(category)
+    
+    def update(self, category: Category) -> None:
+        old_category = self.get_by_id(category.id)
+        if old_category:
+            self.categories.remove(old_category)
+            self.categories.append(category)

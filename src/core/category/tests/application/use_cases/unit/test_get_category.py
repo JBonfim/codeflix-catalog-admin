@@ -3,7 +3,7 @@ from unittest.mock import create_autospec
 import uuid
 
 import pytest
-from core.category.application.category_repository import CategoryRepository
+from core.category.domain.category_repository import CategoryRepository
 from core.category.application.user_cases.exceptions import CategoryNotFound
 from core.category.application.user_cases.get_category import GetCategory, GetCategoryRequest, GetCategoryResponse
 from core.category.domain.category import Category

@@ -1,6 +1,6 @@
 from uuid import UUID
 from core.category.domain.category import Category
-from src.core.category.application.category_repository import CategoryRepository
+from core.category.domain.category_repository import CategoryRepository
 
 
 class InMemoryCategoryRepository(CategoryRepository):

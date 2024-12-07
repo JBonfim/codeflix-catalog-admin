@@ -46,8 +46,8 @@ print(django.get_version())
 
   - pip manage.py shell_plus
 
-mkdir -p src/django_project\category_app
-python manage.py startapp category_app .\src\django_project\category_app
+mkdir -p src/django_project\cast_member_app
+python manage.py startapp cast_member_app .\src\django_project\cast_member_app
 
 # Migration
  - python manage.py makemigrations # criar migrations com django

@@ -44,6 +44,8 @@ print(django.get_version())
   - python manage.py
   - python manage.py runserver
 
+  - pip manage.py shell_plus
+
 mkdir -p src/django_project\category_app
 python manage.py startapp category_app .\src\django_project\category_app
 
@@ -61,3 +63,5 @@ python manage.py test django_project
 - pip install django
 - pip install djangorestframework
 - pip install pytest-django
+- pip install django-extensions
+- pip install ipython

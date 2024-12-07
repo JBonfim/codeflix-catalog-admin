@@ -20,9 +20,11 @@ from django.urls import path
 from rest_framework.routers import DefaultRouter
 
 from django_project.category_app.views import CategoryViewSet
+from django_project.genre_app.views import GenreViewSet
 
 router = DefaultRouter()
 router.register("api/categories",CategoryViewSet,basename="category")
+router.register("api/genres", GenreViewSet, basename="genre")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from uuid import UUID
 from core.category.domain.category_repository import CategoryRepository
-from src.core.category.application.user_cases.exceptions import InvalidCategory
-from src.core.category.domain.category import Category
+from core.category.application.user_cases.exceptions import InvalidCategory
+from core.category.domain.category import Category
 
 @dataclass
 class CreateCategoryRequest:

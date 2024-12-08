@@ -1,5 +1,5 @@
 from django.http import QueryDict
-from src.django_project.category_app.serializers import CreateCategoryRequestSerializer
+from django_project.category_app.serializers import CreateCategoryRequestSerializer
 
 
 class TestCreateCategoryRequestSerializer:

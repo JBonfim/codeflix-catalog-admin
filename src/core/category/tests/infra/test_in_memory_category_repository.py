@@ -1,5 +1,5 @@
-from src.core.category.domain.category import Category
-from src.core.category.infra.in_memory_category_repository import InMemoryCategoryRepository
+from core.category.domain.category import Category
+from core.category.infra.in_memory_category_repository import InMemoryCategoryRepository
 
 
 class TestInMemoryCategoryRepository:

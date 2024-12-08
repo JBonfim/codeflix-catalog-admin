@@ -31,9 +31,9 @@ from django.urls import reverse
 import pytest
 from rest_framework import status
 from rest_framework.test import APIClient
-from src.core.category.domain.category import Category
+from core.category.domain.category import Category
 
-from src.django_project.category_app.repository import DjangoORMCategoryRepository
+from django_project.category_app.repository import DjangoORMCategoryRepository
 
 
 @pytest.fixture

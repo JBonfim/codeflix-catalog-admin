@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_project.category_app',
     'django_project.genre_app',
-    'django_project.cast_member_app'
+    'django_project.cast_member_app',
+    'django_project.video_app'
 ]
 
 MIDDLEWARE = [

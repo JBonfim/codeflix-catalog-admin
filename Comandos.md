@@ -46,8 +46,8 @@ print(django.get_version())
 
   - pip manage.py shell_plus
 
-mkdir -p src/django_project\cast_member_app
-python manage.py startapp cast_member_app .\src\django_project\cast_member_app
+mkdir -p src/django_project\video_app
+python manage.py startapp video_app .\src\django_project\video_app
 
 # Migration
  - python manage.py makemigrations # criar migrations com django
@@ -65,3 +65,5 @@ python manage.py test django_project
 - pip install pytest-django
 - pip install django-extensions
 - pip install ipython
+- pip install pyjwt
+- pip install cryptography

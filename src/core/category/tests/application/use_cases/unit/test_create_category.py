@@ -5,8 +5,8 @@ import pytest
 
 
 from core.category.domain.category_repository import CategoryRepository
-from src.core.category.application.user_cases.create_category import CreateCategory, CreateCategoryRequest, CreateCategoryResponse
-from src.core.category.application.user_cases.exceptions import InvalidCategory
+from core.category.application.user_cases.create_category import CreateCategory, CreateCategoryRequest, CreateCategoryResponse
+from core.category.application.user_cases.exceptions import InvalidCategory
 
 class TestCreateCategory:
     def test_create_category(self):

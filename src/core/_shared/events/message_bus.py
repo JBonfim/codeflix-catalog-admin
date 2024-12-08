@@ -7,7 +7,7 @@ from core._shared.events.event import Event, TEvent
 from core._shared.infrastructure.events.rabbitmq_dispatcher import RabbitMQDispatcher
 from core.video.application.events.handlers import PublishAudioVideoMediaUpdatedHandler, DummyHandler
 from core.video.application.events.integration_events import AudioVideoMediaUpdatedIntegrationEvent
-from core.video.domain.events import AudioVideoMediaUpdated
+from core.video.domain.events.events import AudioVideoMediaUpdated
 
 logger = logging.getLogger(__name__)
 

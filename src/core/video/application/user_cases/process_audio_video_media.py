@@ -32,6 +32,8 @@ class ProcessAudioVideoMedia:
         if request.media_type == MediaType.VIDEO:
             if not video.video:
                 raise MediaNotFound("Video must have a video media to be processed")
+            
+            print("Iniciando o processo do video")
 
             video.process(status=request.status, encoded_location=request.encoded_location)
 

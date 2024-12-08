@@ -1,10 +1,10 @@
-from pathlib import Path
 from uuid import UUID
 
 from rest_framework import viewsets
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from core._shared.events.message_bus import MessageBus
 from core._shared.infrastructure.storage.local_storage import LocalStorage
 from core.video.application.user_cases.exceptions import VideoNotFound
 from core.video.application.user_cases.upload_video import UploadVideo
@@ -12,6 +12,7 @@ from django_project.video_app.repository import DjangoORMVideoRepository
 
 
 class VideoViewSet(viewsets.ViewSet):
+
     def list(self, request: Request) -> Response:
         raise NotImplementedError
 
@@ -31,7 +32,8 @@ class VideoViewSet(viewsets.ViewSet):
 
         upload_video = UploadVideo(
             repository=DjangoORMVideoRepository(),
-            storage_service=LocalStorage()
+            storage_service=LocalStorage(),
+            message_bus=MessageBus(),
         )
         try:
             upload_video.execute(

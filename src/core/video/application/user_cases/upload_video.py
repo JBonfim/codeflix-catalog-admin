@@ -29,7 +29,7 @@ class UploadVideo:
         if video is None:
             raise VideoNotFound(input.video_id)
 
-        file_path = Path("videos") / str(video.id) / input.file_name
+        file_path = (Path("videos") / str(video.id) / input.file_name).resolve()
         self.storage_service.store(file_path, input.content, input.content_type)
         video_media = AudioVideoMedia(
             name=input.file_name,

@@ -95,10 +95,13 @@ class Video(Entity):
         self.validate()
 
     def process(self, status: MediaStatus, encoded_location: str = "") -> None:
+        print("execultando o process")
         if status == MediaStatus.COMPLETED:
             self.video = self.video.complete(encoded_location)
             self.publish()
         else:
             self.video = self.video.fail()
+            
+        print("finalizando o process")
 
         self.validate()

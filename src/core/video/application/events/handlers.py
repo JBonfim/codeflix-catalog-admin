@@ -1,7 +1,7 @@
 from core._shared.application.handlers import Handler
 from core._shared.events.event_dispatcher import EventDispatcher
 from core.video.application.events.integration_events import AudioVideoMediaUpdatedIntegrationEvent
-from core.video.domain.events import AudioVideoMediaUpdated
+from core.video.domain.events.events import AudioVideoMediaUpdated
 
 
 class PublishAudioVideoMediaUpdatedHandler(Handler[AudioVideoMediaUpdatedIntegrationEvent]):

@@ -3,6 +3,8 @@ from enum import StrEnum
 import uuid
 from uuid import UUID
 
+from core._shared.domain.entity import Entity
+
 
 class CastMemberType(StrEnum):
     ACTOR = "ACTOR"
@@ -10,23 +12,31 @@ class CastMemberType(StrEnum):
 
 
 @dataclass
-class CastMember:
+class CastMember(Entity):
     name: str
     type: CastMemberType
-    id: UUID = field(default_factory=uuid.uuid4)
 
     def __post_init__(self):
         self.validate()
 
     def validate(self):
         if len(self.name) > 255:
-            raise ValueError("name cannot be longer than 255")
+            # raise ValueError("name cannot be longer than 255")
+            self.notification.add_error("name cannot be longer than 255")
 
         if not self.name:
-            raise ValueError("name cannot be empty")
+            # raise ValueError("name cannot be empty")
+            self.notification.add_error("name cannot be empty")
+        
 
         if not self.type in CastMemberType:
-            raise ValueError("type must be a valid CastMemberType: actor or director")
+            # raise ValueError("type must be a valid CastMemberType: actor or director")
+            self.notification.add_error("type must be a valid CastMemberType: actor or director")
+            
+        if self.notification.has_errors:
+            # Não interrompemos o fluxo e acumulamos os erros
+            # Poderíamos não retornar `ValueError` e deixar como responsabilidade do cliente verificar se há erros.
+            raise ValueError(self.notification.messages)
 
     def __str__(self):
         return f"{self.name} - {self.type}"

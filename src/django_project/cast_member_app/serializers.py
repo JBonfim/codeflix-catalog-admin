@@ -19,10 +19,16 @@ class CastMemberResponseSerializer(serializers.Serializer):
     id = serializers.UUIDField()
     name = serializers.CharField(max_length=255)
     type = CastMemberTypeField(required=True)
+    
+class ListOutputMetaSerializer(serializers.Serializer):
+    current_page = serializers.IntegerField()
+    per_page = serializers.IntegerField()
+    total = serializers.IntegerField()
 
 
 class ListCastMemberResponseSerializer(serializers.Serializer):
     data = CastMemberResponseSerializer(many=True)
+    meta = ListOutputMetaSerializer()
 
 
 class CreateCastMemberRequestSerializer(serializers.Serializer):

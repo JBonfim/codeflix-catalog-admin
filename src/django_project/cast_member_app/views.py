@@ -40,7 +40,10 @@ from django_project.cast_member_app.serializers import (
 class CastMemberViewSet(viewsets.ViewSet):
     def list(self, request: Request) -> Response:
         use_case = ListCastMember(repository=DjangoORMCastMemberRepository())
-        output: ListCastMemberResponse = use_case.execute(request=ListCastMemberRequest())
+        output: ListCastMemberResponse = use_case.execute(request=ListCastMemberRequest(
+            order_by=request.query_params.get("order_by", "name"),
+            current_page=int(request.query_params.get("current_page", 1)),
+        ))
         response_serializer = ListCastMemberResponseSerializer(output)
 
         return Response(

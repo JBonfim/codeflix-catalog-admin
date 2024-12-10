@@ -17,14 +17,6 @@ chmod +x .\build_lambda.sh
 # Angular:
 npm i --legacy-peer-deps
 
-# Python VENV
-
-```bash
-python3 -m venv venv
-.\venv\Scripts\Activate
-python
-```
-
 # Python: 
 
 
@@ -57,14 +49,28 @@ print(django.get_version())
 mkdir -p src/django_project\video_app
 python manage.py startapp video_app .\src\django_project\video_app
 
+# Python VENV
+
+```bash
+python3 -m venv venv
+.\venv\Scripts\Activate
+python
+```
+
 # Migration
+```bash
  - python manage.py makemigrations # criar migrations com django
  - python manage.py migrate # cria/atualiza a tabela
  - python manage.py dbshell
  - python manage.py createsuperuser
+```
+
 
 # Rodar Testes:
+```bash
 python manage.py test django_project
+```
+
 
 # Dependencias:
 ```bash

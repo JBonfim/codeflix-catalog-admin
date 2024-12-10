@@ -17,8 +17,16 @@ chmod +x .\build_lambda.sh
 # Angular:
 npm i --legacy-peer-deps
 
-# Python: 
+# Python VENV
+
+```bash
 python3 -m venv venv
+.\venv\Scripts\Activate
+python
+```
+
+# Python: 
+
 
 source venv/bin/activate ou .\venv\Scripts\Activate
 Comando + k = clear no terminal

@@ -67,6 +67,7 @@ python manage.py startapp video_app .\src\django_project\video_app
 python manage.py test django_project
 
 # Dependencias:
+```bash
 - pip install pytest
 - pip install django
 - pip install djangorestframework
@@ -75,3 +76,5 @@ python manage.py test django_project
 - pip install ipython
 - pip install pyjwt
 - pip install cryptography
+```
+

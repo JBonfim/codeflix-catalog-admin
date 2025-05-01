@@ -39,3 +39,6 @@ urllib3==2.2.3
 userpath==1.9.2
 virtualenv==20.28.0
 zipp==3.21.0
+Django>=3.2,<4.0
+djangorestframework>=3.12,<4.0
+pika>=1.2,<2.0
